@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 33% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 240 35% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 240 35% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 227 80% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 329 100% 68%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 240 20% 25%;
+    --muted-foreground: 240 5% 75%;
+
+    --accent: 189 91% 56%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 20% 30%;
+    --input: 240 20% 30%;
+    --ring: 240 20% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 40% 13%;
+    --sidebar-foreground: 240 10% 80%;
+    --sidebar-primary: 227 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 28% 18%;
+    --sidebar-accent-foreground: 240 10% 80%;
+    --sidebar-border: 240 28% 18%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-dashboard-deepblue text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium;
+  }
+}
+
+.glass-card {
+  @apply bg-dashboard-navy/80 backdrop-blur-sm border border-white/5 shadow-lg;
+}
+
+.chart-container {
+  @apply rounded-xl overflow-hidden;
+}
+
+.hoverable-card {
+  @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(45,101,235,0.2)];
+}
+
+.dashboard-gradient {
+  background: linear-gradient(to bottom right, #1E213A, #0D0F2A);
+}
+
+.glow {
+  @apply relative;
+}
+
+.glow:before {
+  content: '';
+  @apply absolute inset-0 blur-md bg-dashboard-cyan/10 opacity-0 transition-opacity duration-300 rounded-xl -z-10;
+}
+
+.glow:hover:before {
+  @apply opacity-100;
+}
+
+.text-shadow {
+  text-shadow: 0 0 20px rgba(45, 238, 242, 0.5);
+}
+
+.recharts-layer {
+  @apply transition-opacity duration-300;
+}
+
+.recharts-default-tooltip {
+  @apply bg-dashboard-darkblue/90 border border-dashboard-cyan/20 shadow-lg !important;
+}
